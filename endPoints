@@ -3,12 +3,20 @@ GET:
 http://localhost:8080/api/users
 
 http://localhost:8080/api/certifications
+http://localhost:8080/api/certifications/type/agile
+http://localhost:8080/api/certifications/type/networking
 
 http://localhost:8080/api/courses
+http://localhost:8080/api/courses/top-two
 
 http://localhost:8080/api/mentors
 
 http://localhost:8080/api/internships
+http://localhost:8080/api/internships/this-month
+http://localhost:8080/api/internships/this-day
+http://localhost:8080/api/internships/this-day
+http://localhost:8080/api/internships/this-week
+http://localhost:8080/api/internships/popular
 
 http://localhost:8080/api/articles
 
@@ -23,5 +31,9 @@ http://localhost:8080/api/hackathons
 http://localhost:8080/api/participants
 
 http://localhost:8080/api/roadmaps
+http://localhost:8080/api/roadmaps/type/informatique
+http://localhost:8080/api/roadmaps/type/Réseaux
+http://localhost:8080/api/roadmaps/type/{type}
+
 
 http://localhost:8080/api/videos-road
