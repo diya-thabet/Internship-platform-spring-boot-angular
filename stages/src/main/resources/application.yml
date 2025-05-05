@@ -17,26 +17,3 @@ spring:
         format_sql: true
     database: mysql
     database-platform: org.hibernate.dialect.MySQL8Dialect
-
-  mail:
-    host: smtp.gmail.com
-    port: 587
-    username: mohamaddhia@gmail.com
-    password: uchu spwt dlsn rjlp
-    properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true
-
-  servlet:
-    multipart:
-      max-file-size: 1MB
-      max-request-size: 1MB
-
-internship-management:
-  jwtCookieName: internship-registration
-  jwtSecret: eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6InRlc3RhZG1pbiIsImV4cCI6MTcwNDkxMzI5NSwiaWF0IjoxNzA0OTEzMjk1fQ.BrEcgv36oahMJuSgmcZPdTpv_qtRynHnxwAS7kRj5yw
-  jwtExpirationMs: 86400000
-  jwtRefreshExpirationMs: 86400000
