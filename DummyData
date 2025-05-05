@@ -1,0 +1,587 @@
+-- Dummy data for ENICarthage-related tables, reflecting Tunisian engineering school and enterprises
+-- All data is in French, tailored to ENICarthage's disciplines and Tunisian context
+-- Compatible with Spring Boot entities in enicar.platform.stages package
+-- Includes CREATE TABLE statements to ensure correct schema
+
+-- Table User
+CREATE TABLE IF NOT EXISTS stages.User (
+    id_U INT PRIMARY KEY AUTO_INCREMENT,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    imageUser VARCHAR(255)
+);
+INSERT INTO stages.User (email, password, image_user) VALUES
+('ahmed.benali@enicarthage.tn', 'hashed_password_123', 'images/users/ahmed.jpg'),
+('sana.mhiri@enicarthage.tn', 'hashed_password_456', 'images/users/sana.jpg'),
+('mohamed.trabelsi@enicarthage.tn', 'hashed_password_789', 'images/users/mohamed.jpg'),
+('fatma.zouari@enicarthage.tn', 'hashed_password_101', 'images/users/fatma.jpg'),
+('youssef.chaabouni@enicarthage.tn', 'hashed_password_202', 'images/users/youssef.jpg'),
+('leila.khaled@enicarthage.tn', 'hashed_password_303', 'images/users/leila.jpg'),
+('karim.jabali@enicarthage.tn', 'hashed_password_404', 'images/users/karim.jpg'),
+('noura.haddad@enicarthage.tn', 'hashed_password_505', 'images/users/noura.jpg'),
+('rami.guesmi@enicarthage.tn', 'hashed_password_606', 'images/users/rami.jpg'),
+('amina.bouzid@enicarthage.tn', 'hashed_password_707', 'images/users/amina.jpg'),
+('admin.eni@enicarthage.tn', 'hashed_password_admin', 'images/users/admin.jpg'),
+('prof.cherif@enicarthage.tn', 'hashed_password_prof1', 'images/users/cherif.jpg');
+
+-- Table Certification
+CREATE TABLE IF NOT EXISTS stages.Certification (
+    id_Certif INT PRIMARY KEY AUTO_INCREMENT,
+    titleCert VARCHAR(255) NOT NULL,
+    type VARCHAR(100),
+    description TEXT,
+    imageUrl VARCHAR(255)
+);
+INSERT INTO stages.Certification (title_cert, type, description, image_url) VALUES
+('Certification en Programmation Python', 'Programming', 'Formation avancée en Python pour les applications d’ingénierie.', 'images/certifs/python.jpg'),
+('Certification en Analyse de Données', 'Data', 'Maîtrise des outils d’analyse de données avec Pandas et SQL.', 'images/certifs/data.jpg'),
+('Certification en Cybersécurité', 'Cyber', 'Fondamentaux de la sécurité des réseaux et systèmes.', 'images/certifs/cyber.jpg'),
+('Certification en Réseaux Cisco', 'Networking', 'Configuration et gestion des réseaux avec Cisco CCNA.', 'images/certifs/cisco.jpg'),
+('Certification en Analyse Business', 'Analytics', 'Techniques d’analyse pour la prise de décision stratégique.', 'images/certifs/analytics.jpg'),
+('Certification Scrum Master', 'Agile', 'Maîtrise des méthodologies agiles pour la gestion de projets.', 'images/certifs/scrum.jpg'),
+('Certification TOEIC', 'Anglais', 'Évaluation des compétences en anglais professionnel.', 'images/certifs/toeic.jpg'),
+('Certification en Développement Web', 'Programming', 'Création d’applications web avec HTML, CSS et JavaScript.', 'images/certifs/webdev.jpg'),
+('Certification en Machine Learning', 'Data', 'Introduction aux algorithmes de machine learning.', 'images/certifs/ml.jpg'),
+('Certification en Gestion de Projets PMI', 'Agile', 'Fondamentaux de la gestion de projets selon PMI.', 'images/certifs/pmi.jpg'),
+('Certification en Sécurité des Systèmes', 'Cyber', 'Protection contre les menaces cybernétiques avancées.', 'images/certifs/cyber2.jpg');
+
+-- Table Course
+CREATE TABLE IF NOT EXISTS stages.Course (
+    id_Course INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    typeC VARCHAR(100),
+    nView INT DEFAULT 0,
+    imageC VARCHAR(255)
+);
+INSERT INTO stages.Course (title, typeC, n_View, imageC) VALUES
+('Introduction à l’Informatique', 'Informatique', 150, 'images/courses/info101.jpg'),
+('Électrotechnique de Base', 'Électrique', 120, 'images/courses/elec101.jpg'),
+('Mécatronique Avancée', 'Mécatronique', 80, 'images/courses/meca201.jpg'),
+('Gestion Logistique', 'Logistique', 90, 'images/courses/log101.jpg'),
+('Programmation Orientée Objet', 'Informatique', 200, 'images/courses/oop.jpg'),
+('Réseaux et Protocoles', 'Réseaux', 110, 'images/courses/network.jpg'),
+('Analyse des Systèmes Industriels', 'Industriel', 70, 'images/courses/indus.jpg'),
+('Intelligence Artificielle', 'Informatique', 180, 'images/courses/ai.jpg'),
+('Systèmes Embarqués', 'Mécatronique', 95, 'images/courses/embedded.jpg'),
+('Gestion de Projets', 'Logistique', 85, 'images/courses/project.jpg'),
+('Cybersécurité Fondamentale', 'Informatique', 130, 'images/courses/cybersec.jpg'),
+('Anglais Technique', 'Anglais', 100, 'images/courses/english.jpg');
+
+-- Table Mentor
+CREATE TABLE IF NOT EXISTS stages.Mentor (
+    id_M INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    job VARCHAR(100),
+    email VARCHAR(255)
+);
+INSERT INTO stages.Mentor (name, job, email) VALUES
+('Dr. Hedi Ben Salah', 'Professeur en Informatique', 'hedi.bensalah@enicarthage.tn'),
+('Dr. Amel Guesmi', 'Professeur en Mécatronique', 'amel.guesmi@enicarthage.tn'),
+('M. Sami Trabelsi', 'Ingénieur Senior, Tunisie Télécom', 'sami.trabelsi@tunisietelecom.tn'),
+('Mme. Nadia Cherif', 'Consultante en Logistique', 'nadia.cherif@consult.tn'),
+('Dr. Karim Jlassi', 'Professeur en Électrotechnique', 'karim.jlassi@enicarthage.tn'),
+('M. Lotfi Ben Romdhane', 'Directeur IT, STEG', 'lotfi.benromdhane@steg.tn'),
+('Mme. Salma Mhiri', 'Experte en Cybersécurité', 'salma.mhiri@cyber.tn'),
+('Dr. Faten Zouari', 'Professeur en Gestion Industrielle', 'faten.zouari@enicarthage.tn'),
+('M. Yassine Chaabouni', 'Développeur Senior, Sofrecom', 'yassine.chaabouni@sofrecom.tn'),
+('Mme. Amina Khedher', 'Formatrice en Anglais', 'amina.khedher@enicarthage.tn');
+
+-- Table Internship
+CREATE TABLE IF NOT EXISTS stages.Internship (
+    id_I INT PRIMARY KEY AUTO_INCREMENT,
+    company VARCHAR(255) NOT NULL,
+    description TEXT,
+    nameIntern VARCHAR(255),
+    imageIntern VARCHAR(255),
+    urlDrive VARCHAR(255),
+    dateEnd DATE,
+    popularity INT DEFAULT 0
+);
+INSERT INTO stages.Internship (company, description, name_Intern, image_Intern, url_Drive, date_End, popularity) VALUES
+('Tunisie Télécom', 'Stage en développement d’applications mobiles.', 'Stage Mobile 2025', 'images/interns/tt1.jpg', 'drive.google.com/tt1', '2025-06-30', 50),
+('STEG', 'Stage en gestion des réseaux électriques.', 'Stage Réseaux 2025', 'images/interns/steg1.jpg', 'drive.google.com/steg1', '2025-07-15', 30),
+('Sofrecom Tunisie', 'Stage en développement web full-stack.', 'Stage Web 2025', 'images/interns/sofrecom1.jpg', 'drive.google.com/sofrecom1', '2025-08-01', 45),
+('Biat', 'Stage en analyse de données financières.', 'Stage Data 2025', 'images/interns/biat1.jpg', 'drive.google.com/biat1', '2025-05-31', 20),
+('Vermeg', 'Stage en cybersécurité des systèmes.', 'Stage Cyber 2025', 'images/interns/vermeg1.jpg', 'drive.google.com/vermeg1', '2025-06-15', 35),
+('Tunisie Télécom', 'Stage en optimisation des réseaux 5G.', 'Stage 5G 2025', 'images/interns/tt2.jpg', 'drive.google.com/tt2', '2025-07-10', 40),
+('STEG', 'Stage en automatisation industrielle.', 'Stage Auto 2025', 'images/interns/steg2.jpg', 'drive.google.com/steg2', '2025-05-20', 25),
+('Sagemcom Tunisie', 'Stage en systèmes embarqués.', 'Stage Embed 2025', 'images/interns/sagemcom1.jpg', 'drive.google.com/sagemcom1', '2025-06-25', 30),
+('Ooredoo Tunisie', 'Stage en gestion de projets télécoms.', 'Stage Projet 2025', 'images/interns/ooredoo1.jpg', 'drive.google.com/ooredoo1', '2025-07-05', 15),
+('Cynapsys', 'Stage en intelligence artificielle.', 'Stage IA 2025', 'images/interns/cynapsys1.jpg', 'drive.google.com/cynapsys1', '2025-06-20', 50),
+('Amen Bank', 'Stage en gestion logistique bancaire.', 'Stage Log 2025', 'images/interns/amen1.jpg', 'drive.google.com/amen1', '2025-05-15', 10);
+
+-- Table Article
+CREATE TABLE IF NOT EXISTS stages.Article (
+    id_A INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    typeA VARCHAR(100),
+    description TEXT,
+    url VARCHAR(255)
+);
+INSERT INTO stages.Article (name, typeA, description, url) VALUES
+('L’Impact de l’IA en Tunisie', 'Informatique', 'Analyse des applications de l’IA dans les entreprises tunisiennes.', 'articles/ia-tunisie.pdf'),
+('Réseaux 5G en Tunisie', 'Réseaux', 'Étude sur le déploiement de la 5G par Tunisie Télécom.', 'articles/5g-tunisie.pdf'),
+('Automatisation Industrielle', 'Industriel', 'Tendances dans l’automatisation chez STEG.', 'articles/auto-indus.pdf'),
+('Cybersécurité en 2025', 'Informatique', 'Stratégies pour sécuriser les systèmes tunisiens.', 'articles/cyber-2025.pdf'),
+('Logistique 4.0', 'Logistique', 'Modernisation de la logistique dans les ports tunisiens.', 'articles/logistique-4.0.pdf'),
+('Énergies Renouvelables', 'Électrique', 'Projets solaires et éoliens par STEG.', 'articles/energie-verte.pdf'),
+('Développement Durable', 'Industriel', 'Initiatives durables dans l’industrie tunisienne.', 'articles/durable.pdf'),
+('Big Data en Finance', 'Informatique', 'Utilisation du big data par BIAT et Amen Bank.', 'articles/bigdata-finance.pdf'),
+('Systèmes Embarqués', 'Mécatronique', 'Innovations dans les systèmes embarqués chez Sagemcom.', 'articles/embedded.pdf'),
+('Agilité en Projets', 'Logistique', 'Adoption des méthodes agiles en Tunisie.', 'articles/agile.pdf');
+
+-- Table Podcast
+CREATE TABLE IF NOT EXISTS stages.Podcast (
+    id_P INT PRIMARY KEY AUTO_INCREMENT,
+    nameP VARCHAR(255) NOT NULL,
+    descriptionP TEXT,
+    imageP VARCHAR(255),
+    urlP VARCHAR(255)
+);
+INSERT INTO stages.Podcast (nameP, descriptionP, imageP, urlP) VALUES
+('L’Avenir de l’IA', 'Discussion sur l’IA avec des experts tunisiens.', 'images/podcasts/ia.jpg', 'podcasts/ia.mp3'),
+('Réseaux du Futur', 'Exploration des réseaux 5G en Tunisie.', 'images/podcasts/5g.jpg', 'podcasts/5g.mp3'),
+('Énergie Verte', 'Projets d’énergie renouvelable avec STEG.', 'images/podcasts/energie.jpg', 'podcasts/energie.mp3'),
+('Cybersécurité Aujourd’hui', 'Menaces et solutions en cybersécurité.', 'images/podcasts/cyber.jpg', 'podcasts/cyber.mp3'),
+('Logistique Moderne', 'Optimisation logistique avec des experts.', 'images/podcasts/logistique.jpg', 'podcasts/logistique.mp3'),
+('Mécatronique en Action', 'Applications pratiques de la mécatronique.', 'images/podcasts/meca.jpg', 'podcasts/meca.mp3'),
+('Développement Web', 'Tendances en développement web.', 'images/podcasts/webdev.jpg', 'podcasts/webdev.mp3'),
+('Gestion de Projets', 'Stratégies pour réussir ses projets.', 'images/podcasts/projet.jpg', 'podcasts/projet.mp3'),
+('Anglais pour Ingénieurs', 'Améliorer son anglais technique.', 'images/podcasts/english.jpg', 'podcasts/english.mp3'),
+('Innovation en Tunisie', 'Startups et innovation technologique.', 'images/podcasts/innovation.jpg', 'podcasts/innovation.mp3');
+
+-- Table Video
+CREATE TABLE IF NOT EXISTS stages.Video (
+    id_V INT PRIMARY KEY AUTO_INCREMENT,
+    description TEXT,
+    name VARCHAR(255) NOT NULL
+);
+INSERT INTO stages.Video (description, name) VALUES
+('Introduction à la programmation en Python.', 'Tutoriel Python'),
+('Fondamentaux des réseaux informatiques.', 'Réseaux 101'),
+('Conception de systèmes embarqués.', 'Systèmes Embarqués'),
+('Gestion agile des projets.', 'Agile 101'),
+('Analyse de données avec SQL.', 'SQL pour Data'),
+('Introduction à la cybersécurité.', 'Cybersecurity Basics'),
+('Électrotechnique pratique.', 'Électrotechnique 101'),
+('Logistique et supply chain.', 'Logistique 101'),
+('IA et machine learning.', 'IA Fondamentaux'),
+('Anglais pour ingénieurs.', 'Technical English'),
+('Mécatronique en pratique.', 'Mécatronique 101');
+
+-- Table Event
+CREATE TABLE IF NOT EXISTS stages.Event (
+    id_E INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    imageE VARCHAR(255),
+    urlE VARCHAR(255)
+);
+INSERT INTO stages.Event (name, description, imageE, urlE) VALUES
+('Journée Portes Ouvertes 2025', 'Découvrez les programmes d’ENICarthage.', 'images/events/jpo2025.jpg', 'events/jpo2025'),
+('Conférence IA Tunisie', 'Exploration des avancées en IA.', 'images/events/ia2025.jpg', 'events/ia2025'),
+('Hackathon ENICarthage', 'Compétition de codage pour étudiants.', 'images/events/hackathon2025.jpg', 'events/hackathon2025'),
+('Salon de l’Emploi', 'Rencontre avec des entreprises tunisiennes.', 'images/events/emploi2025.jpg', 'events/emploi2025'),
+('Séminaire 5G', 'Déploiement des réseaux 5G en Tunisie.', 'images/events/5g2025.jpg', 'events/5g2025'),
+('Atelier Cybersécurité', 'Formation pratique en sécurité.', 'images/events/cyber2025.jpg', 'events/cyber2025'),
+('Conférence Énergie Verte', 'Solutions énergétiques durables.', 'images/events/energie2025.jpg', 'events/energie2025'),
+('Workshop Mécatronique', 'Projets pratiques en mécatronique.', 'images/events/meca2025.jpg', 'events/meca2025'),
+('Formation Agile', 'Introduction aux méthodes agiles.', 'images/events/agile2025.jpg', 'events/agile2025'),
+('Journée de l’Innovation', 'Présentation des startups tunisiennes.', 'images/events/innovation2025.jpg', 'events/innovation2025');
+
+-- Table Hackathon
+CREATE TABLE IF NOT EXISTS stages.Hackathon (
+    id_H INT PRIMARY KEY AUTO_INCREMENT,
+    nameHack VARCHAR(255) NOT NULL,
+    dateHack DATE,
+    description TEXT,
+    imageH VARCHAR(255),
+    urlH VARCHAR(255)
+);
+INSERT INTO stages.Hackathon (name_Hack, date_Hack, description, imageH, urlH) VALUES
+('Hackathon IA 2025', '2025-06-15', 'Compétition sur l’intelligence artificielle.', 'images/hackathons/ia2025.jpg', 'hackathons/ia2025'),
+('Hackathon 5G', '2025-07-10', 'Développement d’applications 5G.', 'images/hackathons/5g2025.jpg', 'hackathons/5g2025'),
+('Hackathon Cybersécurité', '2025-08-05', 'Défis en sécurité informatique.', 'images/hackathons/cyber2025.jpg', 'hackathons/cyber2025'),
+('Hackathon Logistique', '2025-06-20', 'Solutions pour la logistique.', 'images/hackathons/log2025.jpg', 'hackathons/log2025'),
+('Hackathon Énergie', '2025-07-25', 'Innovations en énergie renouvelable.', 'images/hackathons/energie2025.jpg', 'hackathons/energie2025'),
+('Hackathon Mécatronique', '2025-06-30', 'Projets en systèmes embarqués.', 'images/hackathons/meca2025.jpg', 'hackathons/meca2025'),
+('Hackathon Web', '2025-08-15', 'Développement d’applications web.', 'images/hackathons/web2025.jpg', 'hackathons/web2025'),
+('Hackathon Data', '2025-07-05', 'Analyse de données massives.', 'images/hackathons/data2025.jpg', 'hackathons/data2025'),
+('Hackathon Mobile', '2025-06-25', 'Applications mobiles innovantes.', 'images/hackathons/mobile2025.jpg', 'hackathons/mobile2025'),
+('Hackathon NodeHackel', '2025-07-15', 'Compétition sur Node.js et APIs.', 'images/hackathons/node2025.jpg', 'hackathons/node2025');
+
+-- Table Participant
+CREATE TABLE IF NOT EXISTS stages.Participant (
+    id_F INT PRIMARY KEY AUTO_INCREMENT,
+    firstName VARCHAR(255) NOT NULL,
+    lastName VARCHAR(255) NOT NULL,
+    section VARCHAR(100),
+    tel VARCHAR(20)
+);
+INSERT INTO stages.Participant (first_Name, last_Name, section, tel) VALUES
+('Ahmed', 'Ben Ali', 'Informatique', '+216 22 123 456'),
+('Sana', 'Mhiri', 'Mécatronique', '+216 22 654 321'),
+('Mohamed', 'Trabelsi', 'Logistique', '+216 22 987 654'),
+('Fatma', 'Zouari', 'Informatique', '+216 22 456 789'),
+('Youssef', 'Chaabouni', 'Électrique', '+216 22 321 654'),
+('Leila', 'Khaled', 'Informatique', '+216 22 789 123'),
+('Karim', 'Jabali', 'Mécatronique', '+216 22 147 258'),
+('Noura', 'Haddad', 'Logistique', '+216 22 369 147'),
+('Rami', 'Guesmi', 'Informatique', '+216 22 258 369'),
+('Amina', 'Bouzid', 'Électrique', '+216 22 741 852'),
+('Hassen', 'Ben Romdhane', 'Informatique', '+216 22 963 741'),
+('Mariem', 'Jlassi', 'Mécatronique', '+216 22 852 963');
+
+-- Table HackathonParticipant
+CREATE TABLE IF NOT EXISTS stages.HackathonParticipant (
+    id_H INT,
+    id_F INT,
+    PRIMARY KEY (id_H, id_F),
+    FOREIGN KEY (id_H) REFERENCES stages.Hackathon(id_H),
+    FOREIGN KEY (id_F) REFERENCES stages.Participant(id_F)
+);
+INSERT INTO stages.HackathonParticipant (id_H, id_F) VALUES
+(1, 1), (1, 2), (1, 3), -- Hackathon IA
+(2, 4), (2, 5), (2, 6), -- Hackathon 5G
+(3, 7), (3, 8), (3, 9), -- Hackathon Cybersécurité
+(4, 10), (4, 11), (4, 12), -- Hackathon Logistique
+(5, 1), (5, 4), (5, 7), -- Hackathon Énergie
+(6, 2), (6, 5), (6, 8), -- Hackathon Mécatronique
+(7, 3), (7, 6), (7, 9), -- Hackathon Web
+(8, 10), (8, 11), (8, 12), -- Hackathon Data
+(9, 1), (9, 2), (9, 3), -- Hackathon Mobile
+(10, 4), (10, 5), (10, 6); -- Hackathon NodeHackel
+
+-- Table Roadmap
+CREATE TABLE IF NOT EXISTS stages.Roadmap (
+    id_R INT PRIMARY KEY AUTO_INCREMENT,
+    type VARCHAR(100),
+    imageR VARCHAR(255),
+    description TEXT
+);
+INSERT INTO stages.Roadmap (type, imageR, description) VALUES
+('Informatique', 'images/roadmaps/info.jpg', 'Parcours pour devenir ingénieur en informatique.'),
+('Mécatronique', 'images/roadmaps/meca.jpg', 'Formation en systèmes mécatroniques.'),
+('Logistique', 'images/roadmaps/log.jpg', 'Parcours en gestion logistique et supply chain.'),
+('Électrotechnique', 'images/roadmaps/elec.jpg', 'Formation en ingénierie électrique.'),
+('Cybersécurité', 'images/roadmaps/cyber.jpg', 'Parcours pour experts en sécurité.'),
+('Intelligence Artificielle', 'images/roadmaps/ia.jpg', 'Formation en IA et machine learning.'),
+('Réseaux', 'images/roadmaps/network.jpg', 'Parcours en réseaux et télécommunications.'),
+('Gestion de Projets', 'images/roadmaps/project.jpg', 'Formation en gestion de projets.'),
+('Anglais Technique', 'images/roadmaps/english.jpg', 'Amélioration de l’anglais pour ingénieurs.'),
+('Industriel', 'images/roadmaps/indus.jpg', 'Parcours en systèmes industriels.');
+
+-- Table VideosRoad
+CREATE TABLE IF NOT EXISTS stages.VideosRoad (
+    id_V INT PRIMARY KEY AUTO_INCREMENT,
+    nameV VARCHAR(255) NOT NULL,
+    imageV VARCHAR(255),
+    urlV VARCHAR(255),
+    type VARCHAR(100)
+);
+INSERT INTO stages.VideosRoad (nameV, imageV, urlV, type) VALUES
+('Introduction à Python', 'images/videos/python.jpg', 'videos/python.mp4', 'Informatique'),
+('Systèmes Embarqués', 'images/videos/embedded.jpg', 'videos/embedded.mp4', 'Mécatronique'),
+('Logistique 101', 'images/videos/log.jpg', 'videos/log.mp4', 'Logistique'),
+('Électrotechnique', 'images/videos/elec.jpg', 'videos/elec.mp4', 'Électrotechnique'),
+('Cybersécurité', 'images/videos/cyber.jpg', 'videos/cyber.mp4', 'Cybersécurité'),
+('Machine Learning', 'images/videos/ml.jpg', 'videos/ml.mp4', 'Intelligence Artificielle'),
+('Réseaux TCP/IP', 'images/videos/network.jpg', 'videos/network.mp4', 'Réseaux'),
+('Gestion Agile', 'images/videos/agile.jpg', 'videos/agile.mp4', 'Gestion de Projets'),
+('Anglais Technique', 'images/videos/english.jpg', 'videos/english.mp4', 'Anglais Technique'),
+('Systèmes Industriels', 'images/videos/indus.jpg', 'videos/indus.mp4', 'Industriel'),
+('Développement Web', 'images/videos/web.jpg', 'videos/web.mp4', 'Informatique'),
+('Automatisation', 'images/videos/auto.jpg', 'videos/auto.mp4', 'Industriel');-- Dummy data for ENICarthage-related tables, reflecting Tunisian engineering school and enterprises
+-- All data is in French, tailored to ENICarthage's disciplines and Tunisian context
+-- Compatible with Spring Boot entities in enicar.platform.stages package
+-- Includes CREATE TABLE statements to ensure correct schema
+
+-- Table User
+CREATE TABLE IF NOT EXISTS stages.User (
+    id_U INT PRIMARY KEY AUTO_INCREMENT,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    imageUser VARCHAR(255)
+);
+INSERT INTO stages.User (email, password, image_user) VALUES
+('ahmed.benali@enicarthage.tn', 'hashed_password_123', 'images/users/ahmed.jpg'),
+('sana.mhiri@enicarthage.tn', 'hashed_password_456', 'images/users/sana.jpg'),
+('mohamed.trabelsi@enicarthage.tn', 'hashed_password_789', 'images/users/mohamed.jpg'),
+('fatma.zouari@enicarthage.tn', 'hashed_password_101', 'images/users/fatma.jpg'),
+('youssef.chaabouni@enicarthage.tn', 'hashed_password_202', 'images/users/youssef.jpg'),
+('leila.khaled@enicarthage.tn', 'hashed_password_303', 'images/users/leila.jpg'),
+('karim.jabali@enicarthage.tn', 'hashed_password_404', 'images/users/karim.jpg'),
+('noura.haddad@enicarthage.tn', 'hashed_password_505', 'images/users/noura.jpg'),
+('rami.guesmi@enicarthage.tn', 'hashed_password_606', 'images/users/rami.jpg'),
+('amina.bouzid@enicarthage.tn', 'hashed_password_707', 'images/users/amina.jpg'),
+('admin.eni@enicarthage.tn', 'hashed_password_admin', 'images/users/admin.jpg'),
+('prof.cherif@enicarthage.tn', 'hashed_password_prof1', 'images/users/cherif.jpg');
+
+-- Table Certification
+CREATE TABLE IF NOT EXISTS stages.Certification (
+    id_Certif INT PRIMARY KEY AUTO_INCREMENT,
+    titleCert VARCHAR(255) NOT NULL,
+    type VARCHAR(100),
+    description TEXT,
+    imageUrl VARCHAR(255)
+);
+INSERT INTO stages.Certification (title_cert, type, description, image_url) VALUES
+('Certification en Programmation Python', 'Programming', 'Formation avancée en Python pour les applications d’ingénierie.', 'images/certifs/python.jpg'),
+('Certification en Analyse de Données', 'Data', 'Maîtrise des outils d’analyse de données avec Pandas et SQL.', 'images/certifs/data.jpg'),
+('Certification en Cybersécurité', 'Cyber', 'Fondamentaux de la sécurité des réseaux et systèmes.', 'images/certifs/cyber.jpg'),
+('Certification en Réseaux Cisco', 'Networking', 'Configuration et gestion des réseaux avec Cisco CCNA.', 'images/certifs/cisco.jpg'),
+('Certification en Analyse Business', 'Analytics', 'Techniques d’analyse pour la prise de décision stratégique.', 'images/certifs/analytics.jpg'),
+('Certification Scrum Master', 'Agile', 'Maîtrise des méthodologies agiles pour la gestion de projets.', 'images/certifs/scrum.jpg'),
+('Certification TOEIC', 'Anglais', 'Évaluation des compétences en anglais professionnel.', 'images/certifs/toeic.jpg'),
+('Certification en Développement Web', 'Programming', 'Création d’applications web avec HTML, CSS et JavaScript.', 'images/certifs/webdev.jpg'),
+('Certification en Machine Learning', 'Data', 'Introduction aux algorithmes de machine learning.', 'images/certifs/ml.jpg'),
+('Certification en Gestion de Projets PMI', 'Agile', 'Fondamentaux de la gestion de projets selon PMI.', 'images/certifs/pmi.jpg'),
+('Certification en Sécurité des Systèmes', 'Cyber', 'Protection contre les menaces cybernétiques avancées.', 'images/certifs/cyber2.jpg');
+
+-- Table Course
+CREATE TABLE IF NOT EXISTS stages.Course (
+    id_Course INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    typeC VARCHAR(100),
+    nView INT DEFAULT 0,
+    imageC VARCHAR(255)
+);
+INSERT INTO stages.Course (title, typeC, n_View, imageC) VALUES
+('Introduction à l’Informatique', 'Informatique', 150, 'images/courses/info101.jpg'),
+('Électrotechnique de Base', 'Électrique', 120, 'images/courses/elec101.jpg'),
+('Mécatronique Avancée', 'Mécatronique', 80, 'images/courses/meca201.jpg'),
+('Gestion Logistique', 'Logistique', 90, 'images/courses/log101.jpg'),
+('Programmation Orientée Objet', 'Informatique', 200, 'images/courses/oop.jpg'),
+('Réseaux et Protocoles', 'Réseaux', 110, 'images/courses/network.jpg'),
+('Analyse des Systèmes Industriels', 'Industriel', 70, 'images/courses/indus.jpg'),
+('Intelligence Artificielle', 'Informatique', 180, 'images/courses/ai.jpg'),
+('Systèmes Embarqués', 'Mécatronique', 95, 'images/courses/embedded.jpg'),
+('Gestion de Projets', 'Logistique', 85, 'images/courses/project.jpg'),
+('Cybersécurité Fondamentale', 'Informatique', 130, 'images/courses/cybersec.jpg'),
+('Anglais Technique', 'Anglais', 100, 'images/courses/english.jpg');
+
+-- Table Mentor
+CREATE TABLE IF NOT EXISTS stages.Mentor (
+    id_M INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    job VARCHAR(100),
+    email VARCHAR(255)
+);
+INSERT INTO stages.Mentor (name, job, email) VALUES
+('Dr. Hedi Ben Salah', 'Professeur en Informatique', 'hedi.bensalah@enicarthage.tn'),
+('Dr. Amel Guesmi', 'Professeur en Mécatronique', 'amel.guesmi@enicarthage.tn'),
+('M. Sami Trabelsi', 'Ingénieur Senior, Tunisie Télécom', 'sami.trabelsi@tunisietelecom.tn'),
+('Mme. Nadia Cherif', 'Consultante en Logistique', 'nadia.cherif@consult.tn'),
+('Dr. Karim Jlassi', 'Professeur en Électrotechnique', 'karim.jlassi@enicarthage.tn'),
+('M. Lotfi Ben Romdhane', 'Directeur IT, STEG', 'lotfi.benromdhane@steg.tn'),
+('Mme. Salma Mhiri', 'Experte en Cybersécurité', 'salma.mhiri@cyber.tn'),
+('Dr. Faten Zouari', 'Professeur en Gestion Industrielle', 'faten.zouari@enicarthage.tn'),
+('M. Yassine Chaabouni', 'Développeur Senior, Sofrecom', 'yassine.chaabouni@sofrecom.tn'),
+('Mme. Amina Khedher', 'Formatrice en Anglais', 'amina.khedher@enicarthage.tn');
+
+-- Table Internship
+CREATE TABLE IF NOT EXISTS stages.Internship (
+    id_I INT PRIMARY KEY AUTO_INCREMENT,
+    company VARCHAR(255) NOT NULL,
+    description TEXT,
+    nameIntern VARCHAR(255),
+    imageIntern VARCHAR(255),
+    urlDrive VARCHAR(255),
+    dateEnd DATE,
+    popularity INT DEFAULT 0
+);
+INSERT INTO stages.Internship (company, description, name_Intern, image_Intern, url_Drive, date_End, popularity) VALUES
+('Tunisie Télécom', 'Stage en développement d’applications mobiles.', 'Stage Mobile 2025', 'images/interns/tt1.jpg', 'drive.google.com/tt1', '2025-06-30', 50),
+('STEG', 'Stage en gestion des réseaux électriques.', 'Stage Réseaux 2025', 'images/interns/steg1.jpg', 'drive.google.com/steg1', '2025-07-15', 30),
+('Sofrecom Tunisie', 'Stage en développement web full-stack.', 'Stage Web 2025', 'images/interns/sofrecom1.jpg', 'drive.google.com/sofrecom1', '2025-08-01', 45),
+('Biat', 'Stage en analyse de données financières.', 'Stage Data 2025', 'images/interns/biat1.jpg', 'drive.google.com/biat1', '2025-05-31', 20),
+('Vermeg', 'Stage en cybersécurité des systèmes.', 'Stage Cyber 2025', 'images/interns/vermeg1.jpg', 'drive.google.com/vermeg1', '2025-06-15', 35),
+('Tunisie Télécom', 'Stage en optimisation des réseaux 5G.', 'Stage 5G 2025', 'images/interns/tt2.jpg', 'drive.google.com/tt2', '2025-07-10', 40),
+('STEG', 'Stage en automatisation industrielle.', 'Stage Auto 2025', 'images/interns/steg2.jpg', 'drive.google.com/steg2', '2025-05-20', 25),
+('Sagemcom Tunisie', 'Stage en systèmes embarqués.', 'Stage Embed 2025', 'images/interns/sagemcom1.jpg', 'drive.google.com/sagemcom1', '2025-06-25', 30),
+('Ooredoo Tunisie', 'Stage en gestion de projets télécoms.', 'Stage Projet 2025', 'images/interns/ooredoo1.jpg', 'drive.google.com/ooredoo1', '2025-07-05', 15),
+('Cynapsys', 'Stage en intelligence artificielle.', 'Stage IA 2025', 'images/interns/cynapsys1.jpg', 'drive.google.com/cynapsys1', '2025-06-20', 50),
+('Amen Bank', 'Stage en gestion logistique bancaire.', 'Stage Log 2025', 'images/interns/amen1.jpg', 'drive.google.com/amen1', '2025-05-15', 10);
+
+-- Table Article
+CREATE TABLE IF NOT EXISTS stages.Article (
+    id_A INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    typeA VARCHAR(100),
+    description TEXT,
+    url VARCHAR(255)
+);
+INSERT INTO stages.Article (name, typeA, description, url) VALUES
+('L’Impact de l’IA en Tunisie', 'Informatique', 'Analyse des applications de l’IA dans les entreprises tunisiennes.', 'articles/ia-tunisie.pdf'),
+('Réseaux 5G en Tunisie', 'Réseaux', 'Étude sur le déploiement de la 5G par Tunisie Télécom.', 'articles/5g-tunisie.pdf'),
+('Automatisation Industrielle', 'Industriel', 'Tendances dans l’automatisation chez STEG.', 'articles/auto-indus.pdf'),
+('Cybersécurité en 2025', 'Informatique', 'Stratégies pour sécuriser les systèmes tunisiens.', 'articles/cyber-2025.pdf'),
+('Logistique 4.0', 'Logistique', 'Modernisation de la logistique dans les ports tunisiens.', 'articles/logistique-4.0.pdf'),
+('Énergies Renouvelables', 'Électrique', 'Projets solaires et éoliens par STEG.', 'articles/energie-verte.pdf'),
+('Développement Durable', 'Industriel', 'Initiatives durables dans l’industrie tunisienne.', 'articles/durable.pdf'),
+('Big Data en Finance', 'Informatique', 'Utilisation du big data par BIAT et Amen Bank.', 'articles/bigdata-finance.pdf'),
+('Systèmes Embarqués', 'Mécatronique', 'Innovations dans les systèmes embarqués chez Sagemcom.', 'articles/embedded.pdf'),
+('Agilité en Projets', 'Logistique', 'Adoption des méthodes agiles en Tunisie.', 'articles/agile.pdf');
+
+-- Table Podcast
+CREATE TABLE IF NOT EXISTS stages.Podcast (
+    id_P INT PRIMARY KEY AUTO_INCREMENT,
+    nameP VARCHAR(255) NOT NULL,
+    descriptionP TEXT,
+    imageP VARCHAR(255),
+    urlP VARCHAR(255)
+);
+INSERT INTO stages.Podcast (nameP, descriptionP, imageP, urlP) VALUES
+('L’Avenir de l’IA', 'Discussion sur l’IA avec des experts tunisiens.', 'images/podcasts/ia.jpg', 'podcasts/ia.mp3'),
+('Réseaux du Futur', 'Exploration des réseaux 5G en Tunisie.', 'images/podcasts/5g.jpg', 'podcasts/5g.mp3'),
+('Énergie Verte', 'Projets d’énergie renouvelable avec STEG.', 'images/podcasts/energie.jpg', 'podcasts/energie.mp3'),
+('Cybersécurité Aujourd’hui', 'Menaces et solutions en cybersécurité.', 'images/podcasts/cyber.jpg', 'podcasts/cyber.mp3'),
+('Logistique Moderne', 'Optimisation logistique avec des experts.', 'images/podcasts/logistique.jpg', 'podcasts/logistique.mp3'),
+('Mécatronique en Action', 'Applications pratiques de la mécatronique.', 'images/podcasts/meca.jpg', 'podcasts/meca.mp3'),
+('Développement Web', 'Tendances en développement web.', 'images/podcasts/webdev.jpg', 'podcasts/webdev.mp3'),
+('Gestion de Projets', 'Stratégies pour réussir ses projets.', 'images/podcasts/projet.jpg', 'podcasts/projet.mp3'),
+('Anglais pour Ingénieurs', 'Améliorer son anglais technique.', 'images/podcasts/english.jpg', 'podcasts/english.mp3'),
+('Innovation en Tunisie', 'Startups et innovation technologique.', 'images/podcasts/innovation.jpg', 'podcasts/innovation.mp3');
+
+-- Table Video
+CREATE TABLE IF NOT EXISTS stages.Video (
+    id_V INT PRIMARY KEY AUTO_INCREMENT,
+    description TEXT,
+    name VARCHAR(255) NOT NULL
+);
+INSERT INTO stages.Video (description, name) VALUES
+('Introduction à la programmation en Python.', 'Tutoriel Python'),
+('Fondamentaux des réseaux informatiques.', 'Réseaux 101'),
+('Conception de systèmes embarqués.', 'Systèmes Embarqués'),
+('Gestion agile des projets.', 'Agile 101'),
+('Analyse de données avec SQL.', 'SQL pour Data'),
+('Introduction à la cybersécurité.', 'Cybersecurity Basics'),
+('Électrotechnique pratique.', 'Électrotechnique 101'),
+('Logistique et supply chain.', 'Logistique 101'),
+('IA et machine learning.', 'IA Fondamentaux'),
+('Anglais pour ingénieurs.', 'Technical English'),
+('Mécatronique en pratique.', 'Mécatronique 101');
+
+-- Table Event
+CREATE TABLE IF NOT EXISTS stages.Event (
+    id_E INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    imageE VARCHAR(255),
+    urlE VARCHAR(255)
+);
+INSERT INTO stages.Event (name, description, imageE, urlE) VALUES
+('Journée Portes Ouvertes 2025', 'Découvrez les programmes d’ENICarthage.', 'images/events/jpo2025.jpg', 'events/jpo2025'),
+('Conférence IA Tunisie', 'Exploration des avancées en IA.', 'images/events/ia2025.jpg', 'events/ia2025'),
+('Hackathon ENICarthage', 'Compétition de codage pour étudiants.', 'images/events/hackathon2025.jpg', 'events/hackathon2025'),
+('Salon de l’Emploi', 'Rencontre avec des entreprises tunisiennes.', 'images/events/emploi2025.jpg', 'events/emploi2025'),
+('Séminaire 5G', 'Déploiement des réseaux 5G en Tunisie.', 'images/events/5g2025.jpg', 'events/5g2025'),
+('Atelier Cybersécurité', 'Formation pratique en sécurité.', 'images/events/cyber2025.jpg', 'events/cyber2025'),
+('Conférence Énergie Verte', 'Solutions énergétiques durables.', 'images/events/energie2025.jpg', 'events/energie2025'),
+('Workshop Mécatronique', 'Projets pratiques en mécatronique.', 'images/events/meca2025.jpg', 'events/meca2025'),
+('Formation Agile', 'Introduction aux méthodes agiles.', 'images/events/agile2025.jpg', 'events/agile2025'),
+('Journée de l’Innovation', 'Présentation des startups tunisiennes.', 'images/events/innovation2025.jpg', 'events/innovation2025');
+
+-- Table Hackathon
+CREATE TABLE IF NOT EXISTS stages.Hackathon (
+    id_H INT PRIMARY KEY AUTO_INCREMENT,
+    nameHack VARCHAR(255) NOT NULL,
+    dateHack DATE,
+    description TEXT,
+    imageH VARCHAR(255),
+    urlH VARCHAR(255)
+);
+INSERT INTO stages.Hackathon (name_Hack, date_Hack, description, imageH, urlH) VALUES
+('Hackathon IA 2025', '2025-06-15', 'Compétition sur l’intelligence artificielle.', 'images/hackathons/ia2025.jpg', 'hackathons/ia2025'),
+('Hackathon 5G', '2025-07-10', 'Développement d’applications 5G.', 'images/hackathons/5g2025.jpg', 'hackathons/5g2025'),
+('Hackathon Cybersécurité', '2025-08-05', 'Défis en sécurité informatique.', 'images/hackathons/cyber2025.jpg', 'hackathons/cyber2025'),
+('Hackathon Logistique', '2025-06-20', 'Solutions pour la logistique.', 'images/hackathons/log2025.jpg', 'hackathons/log2025'),
+('Hackathon Énergie', '2025-07-25', 'Innovations en énergie renouvelable.', 'images/hackathons/energie2025.jpg', 'hackathons/energie2025'),
+('Hackathon Mécatronique', '2025-06-30', 'Projets en systèmes embarqués.', 'images/hackathons/meca2025.jpg', 'hackathons/meca2025'),
+('Hackathon Web', '2025-08-15', 'Développement d’applications web.', 'images/hackathons/web2025.jpg', 'hackathons/web2025'),
+('Hackathon Data', '2025-07-05', 'Analyse de données massives.', 'images/hackathons/data2025.jpg', 'hackathons/data2025'),
+('Hackathon Mobile', '2025-06-25', 'Applications mobiles innovantes.', 'images/hackathons/mobile2025.jpg', 'hackathons/mobile2025'),
+('Hackathon NodeHackel', '2025-07-15', 'Compétition sur Node.js et APIs.', 'images/hackathons/node2025.jpg', 'hackathons/node2025');
+
+-- Table Participant
+CREATE TABLE IF NOT EXISTS stages.Participant (
+    id_F INT PRIMARY KEY AUTO_INCREMENT,
+    firstName VARCHAR(255) NOT NULL,
+    lastName VARCHAR(255) NOT NULL,
+    section VARCHAR(100),
+    tel VARCHAR(20)
+);
+INSERT INTO stages.Participant (first_Name, last_Name, section, tel) VALUES
+('Ahmed', 'Ben Ali', 'Informatique', '+216 22 123 456'),
+('Sana', 'Mhiri', 'Mécatronique', '+216 22 654 321'),
+('Mohamed', 'Trabelsi', 'Logistique', '+216 22 987 654'),
+('Fatma', 'Zouari', 'Informatique', '+216 22 456 789'),
+('Youssef', 'Chaabouni', 'Électrique', '+216 22 321 654'),
+('Leila', 'Khaled', 'Informatique', '+216 22 789 123'),
+('Karim', 'Jabali', 'Mécatronique', '+216 22 147 258'),
+('Noura', 'Haddad', 'Logistique', '+216 22 369 147'),
+('Rami', 'Guesmi', 'Informatique', '+216 22 258 369'),
+('Amina', 'Bouzid', 'Électrique', '+216 22 741 852'),
+('Hassen', 'Ben Romdhane', 'Informatique', '+216 22 963 741'),
+('Mariem', 'Jlassi', 'Mécatronique', '+216 22 852 963');
+
+-- Table HackathonParticipant
+CREATE TABLE IF NOT EXISTS stages.HackathonParticipant (
+    id_H INT,
+    id_F INT,
+    PRIMARY KEY (id_H, id_F),
+    FOREIGN KEY (id_H) REFERENCES stages.Hackathon(id_H),
+    FOREIGN KEY (id_F) REFERENCES stages.Participant(id_F)
+);
+INSERT INTO stages.HackathonParticipant (id_H, id_F) VALUES
+(1, 1), (1, 2), (1, 3), -- Hackathon IA
+(2, 4), (2, 5), (2, 6), -- Hackathon 5G
+(3, 7), (3, 8), (3, 9), -- Hackathon Cybersécurité
+(4, 10), (4, 11), (4, 12), -- Hackathon Logistique
+(5, 1), (5, 4), (5, 7), -- Hackathon Énergie
+(6, 2), (6, 5), (6, 8), -- Hackathon Mécatronique
+(7, 3), (7, 6), (7, 9), -- Hackathon Web
+(8, 10), (8, 11), (8, 12), -- Hackathon Data
+(9, 1), (9, 2), (9, 3), -- Hackathon Mobile
+(10, 4), (10, 5), (10, 6); -- Hackathon NodeHackel
+
+-- Table Roadmap
+CREATE TABLE IF NOT EXISTS stages.Roadmap (
+    id_R INT PRIMARY KEY AUTO_INCREMENT,
+    type VARCHAR(100),
+    imageR VARCHAR(255),
+    description TEXT
+);
+INSERT INTO stages.Roadmap (type, imageR, description) VALUES
+('Informatique', 'images/roadmaps/info.jpg', 'Parcours pour devenir ingénieur en informatique.'),
+('Mécatronique', 'images/roadmaps/meca.jpg', 'Formation en systèmes mécatroniques.'),
+('Logistique', 'images/roadmaps/log.jpg', 'Parcours en gestion logistique et supply chain.'),
+('Électrotechnique', 'images/roadmaps/elec.jpg', 'Formation en ingénierie électrique.'),
+('Cybersécurité', 'images/roadmaps/cyber.jpg', 'Parcours pour experts en sécurité.'),
+('Intelligence Artificielle', 'images/roadmaps/ia.jpg', 'Formation en IA et machine learning.'),
+('Réseaux', 'images/roadmaps/network.jpg', 'Parcours en réseaux et télécommunications.'),
+('Gestion de Projets', 'images/roadmaps/project.jpg', 'Formation en gestion de projets.'),
+('Anglais Technique', 'images/roadmaps/english.jpg', 'Amélioration de l’anglais pour ingénieurs.'),
+('Industriel', 'images/roadmaps/indus.jpg', 'Parcours en systèmes industriels.');
+
+-- Table VideosRoad
+CREATE TABLE IF NOT EXISTS stages.VideosRoad (
+    id_V INT PRIMARY KEY AUTO_INCREMENT,
+    nameV VARCHAR(255) NOT NULL,
+    imageV VARCHAR(255),
+    urlV VARCHAR(255),
+    type VARCHAR(100)
+);
+INSERT INTO stages.VideosRoad (nameV, imageV, urlV, type) VALUES
+('Introduction à Python', 'images/videos/python.jpg', 'videos/python.mp4', 'Informatique'),
+('Systèmes Embarqués', 'images/videos/embedded.jpg', 'videos/embedded.mp4', 'Mécatronique'),
+('Logistique 101', 'images/videos/log.jpg', 'videos/log.mp4', 'Logistique'),
+('Électrotechnique', 'images/videos/elec.jpg', 'videos/elec.mp4', 'Électrotechnique'),
+('Cybersécurité', 'images/videos/cyber.jpg', 'videos/cyber.mp4', 'Cybersécurité'),
+('Machine Learning', 'images/videos/ml.jpg', 'videos/ml.mp4', 'Intelligence Artificielle'),
+('Réseaux TCP/IP', 'images/videos/network.jpg', 'videos/network.mp4', 'Réseaux'),
+('Gestion Agile', 'images/videos/agile.jpg', 'videos/agile.mp4', 'Gestion de Projets'),
+('Anglais Technique', 'images/videos/english.jpg', 'videos/english.mp4', 'Anglais Technique'),
+('Systèmes Industriels', 'images/videos/indus.jpg', 'videos/indus.mp4', 'Industriel'),
+('Développement Web', 'images/videos/web.jpg', 'videos/web.mp4', 'Informatique'),
+('Automatisation', 'images/videos/auto.jpg', 'videos/auto.mp4', 'Industriel');
