@@ -2,10 +2,12 @@ package enicar.platform.stages.controller;
 
 import enicar.platform.stages.DTO.CertificationDTO;
 import enicar.platform.stages.service.CertificationService;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
+@AllArgsConstructor
 @RestController
 @RequestMapping("/api/certifications")
 @CrossOrigin(origins = "*")

@@ -1,5 +1,10 @@
 package enicar.platform.stages.DTO;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserDTO {
     private Integer idU;
     private String email;

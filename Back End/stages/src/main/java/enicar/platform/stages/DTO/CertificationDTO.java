@@ -1,5 +1,10 @@
 package enicar.platform.stages.DTO;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
 public class CertificationDTO {
     private Integer idCertif;
     private String titleCert;
