@@ -1,0 +1,58 @@
+<div class="cardd2">
+    <div class="titre22">
+      <div class="icon-container2">
+        <img
+          src="assets/img/8920516.png"
+          alt="All Files"
+          width="30"
+          height="30"
+        />
+      </div>
+      <div class="text-container2">
+        <h1>PFE & Intership</h1>
+        <h2>Search the Intership of your choice</h2>
+      </div>
+    </div>
+    <hr class="separator2" />
+    <div class="cdf">
+      <span class="circle"></span>
+      <h4>20 tasks , Update 4 hours ago</h4>
+    </div>
+    <div class="cdf2">
+      <button>
+        <i class="bi bi-calendar2-minus"></i>
+        <h6>25 April 2025</h6>
+      </button>
+      <button>
+        <i class="bi bi-cloud-upload"></i>
+        <h6>Import / Export</h6>
+      </button>
+      <input type="button" value=" Explore Now" />
+    </div>
+    <div class="tabs-container">
+      <div class="tab active">Popular</div>
+      <div class="tab">This Month</div>
+      <div class="tab">This week</div>
+      <div class="tab">Today</div>
+    </div>
+    <div class="cdbook">
+      <div class="wrap">
+        <div class="box" *ngFor="let company of companies">
+          <div class="box-top">
+            <img class="box-image" [src]="company.image" [alt]="company.name" />
+            <div class="title-flex">
+              <h3 class="box-title">{{ company.name }}</h3>
+              <p class="user-follow-info">Projects: {{ company.projects }}</p>
+            </div>
+            <p class="description">{{ company.description }}</p>
+          </div>
+          <a [href]="company.buttonLink" class="button" download>{{ company.buttonText }}</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="navigation-buttons">
+      <button class="prev-button">← Previous</button>
+      <button class="next-button">Next →</button>
+    </div>
+        </div>

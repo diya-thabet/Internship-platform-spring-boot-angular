@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+/* sidebar.component.css */
+/* Google Font Import - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+.navbar {
+    padding: 0.5rem 1rem; /* Espacement interne */
+    background: linear-gradient(#785bf8, rgba(112.520718,44.062154,249.437846));
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+   
+    
+}
+
+.navbar-brand {
+    font-size: 1.75rem; /* Taille du texte du logo */
+    font-weight: 700; /* Poids du texte du logo */
+    color: #f8f5f5; /* Rouge pour le texte du logo */
+    text-transform: uppercase; /* Mettre le texte en majuscules */
+    letter-spacing: 1px; /* Espacement des lettres */
+    margin-left: -11px;
+    font-family: cursive;
+}
+
+.navbar-toggler {
+    border: none; /* Retirer la bordure du bouton de toggling */
+}
+
+.im{
+    margin-top: 12px;
+
+}
+.im img{
+    width: 69px;
+    height: auto;
+    margin-top: -11px;
+}
+
+.bou{
+    margin-left: 413px;
+}
+.bou img{
+    width: 45px;
+    height: auto;
+    margin-left: 20px;
+    margin-top: -11px;
+}
+
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,...'); /* Icône personnalisée pour le bouton de toggling */
+}
+
+/* Styles pour la zone de contenu collapse */
+.collapse.navbar-collapse {
+    display: flex;
+    justify-content: space-between; /* Espacement entre les éléments */
+    align-items: center; /* Alignement vertical des éléments */
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center; /* Alignement vertical des éléments de navigation */
+}
+
+.nav-item {
+    margin: 0 0.5rem; /* Espacement horizontal entre les éléments */
+}
+
+.nav-link {
+    color: #ffffff; /* Couleur des liens en blanc pour contraster avec le noir */
+    font-size: 1rem; /* Taille du texte des liens */
+    font-weight: 500; /* Poids du texte des liens */
+    transition: color 0.3s ease; /* Transition pour les changements de couleur */
+    text-decoration: none; /* Retirer la décoration des liens */
+}
+
+.nav-link.active {
+    color: #ffffff; /* Rouge pour les liens actifs */
+    font-weight: 600; /* Poids du texte pour les liens actifs */
+    margin-right: 13px;
+    margin-left: 95px;
+}
+
+.nav-link:hover {
+    color: #d2691e; /* Marron pour les liens au survol */
+}
+
+.nav-link.disabled {
+    color: #6c757d; /* Couleur des liens désactivés */
+}
+
+/* Style pour le formulaire de recherche */
+.form-control {
+    border-radius: 0.25rem;
+    border: 1px solid #ffffff;
+    box-shadow: none;
+    padding: 11.375px 0.75rem;
+    background-color: #ffffff;
+    margin-left: 224px;
+    border-radius: 64px;
+    font-family: Poppins;
+    width: 345px;
+}
+
+.form-control:focus {
+    border-color: #ffffff; /* Bordure rouge au focus */
+    box-shadow: 0 0 0 0.2rem rgba(70, 81, 242, 0.25); /* Ombre portée rouge au focus */
+}
+
+/* Style pour les éléments du menu déroulant */
+.nav-item.dropdown .dropdown-menu {
+    background-color: #ffffff; /* Couleur de fond noire pour le menu déroulant */
+    border: none; /* Retirer la bordure du menu déroulant */
+}
+
+.dropdown-item {
+    color: #ffffff; /* Couleur des éléments du menu déroulant */
+    padding: 0.5rem 1rem; /* Espacement interne des éléments du menu déroulant */
+}
+
+.dropdown-item:hover {
+    background-color: #f2eeec; /* Marron pour les éléments du menu déroulant au survol */
+    color: #ffffff; /* Couleur des textes au survol */
+}
+
+/* Réactivité pour les petits écrans */
+@media (max-width: 991px) {
+    .navbar {
+        padding: 0.25rem 0.5rem; /* Réduire l'espacement interne pour les petits écrans */
+    }
+    .navbar-brand {
+        font-size: 1.5rem; /* Réduire la taille du texte du logo pour les petits écrans */
+      
+    }
+    .nav-link {
+        font-size: 0.9rem; /* Réduire la taille du texte des liens pour les petits écrans */
+    }
+}
+.bi-windows {
+    
+    color: #edf0f1;
+    font-size: 23px;
+  }
+  .bi-envelope{
+    color: #edf0f1;
+    font-size: 23px;
+    margin-right: 22px;
+  }

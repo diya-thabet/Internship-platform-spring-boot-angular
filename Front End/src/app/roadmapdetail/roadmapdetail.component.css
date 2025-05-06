@@ -1,0 +1,178 @@
+.roadmap-detail-container {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 0rem;
+      padding: 1rem;
+      background: #fefefe;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      align-items: center;
+      justify-content: center;
+      height: 835px;
+      margin-top: 12px;
+      width: 1230px;
+  }
+  
+  .image-section img {
+    width: 580px;
+    height: 669px;
+    border-radius: 3px;
+    box-shadow: crimson;
+    margin-left: 26px;
+    border: 1px solid cornflowerblue;
+  }
+  
+  .details-section {
+    min-width: 95px;
+    margin-left: 80px;
+    margin-top: 54px;
+  }
+  
+  .details-section .title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+  }
+  
+  .details-section hr {
+    border: none;
+    height: 2px;
+    background-color: #3498db;
+    margin: 1rem 0;
+    width: 100px;
+  }
+  
+  .details-section .description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 1.5rem;
+  }
+  
+  .download-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 30px;
+  }
+  
+  .download-button:hover {
+    background-color: #2980b9;
+  }
+  
+
+
+  .cadrer{
+    width: 501px;
+    height: 107px;
+    background-color: aliceblue;
+    border-radius: 12px
+  }
+
+
+
+
+
+
+
+
+
+  .success-traits {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem auto;
+    max-width: 800px;
+    gap: -16rem;
+  }
+  
+  .trait {
+    display: flex
+    ;
+        flex-direction: column;
+        align-items: center;
+        background: transparent;
+        padding: 1rem;
+        width: 89px;
+        transition: transform 0.3s ease;
+  }
+  
+  .trait i {
+    font-size: 1.5rem;
+    margin-top: 13px;
+    color: gray;
+    margin-bottom: 0.5rem;
+  }
+  
+  .trait p {
+    font-size: 11px;
+    color: black;
+    margin: 0;
+    margin-top: 5px;
+  }
+  
+  .trait:hover {
+    transform: scale(1.05);
+  }
+  
+
+
+  .youtubecard{
+    margin-top: 47px;
+    width: 250px;
+    height: 46px;
+    background-color: brown;
+    border-radius: 54px;
+    margin-left: 135px;
+    
+  }
+
+  .back-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+    color: gray;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+  }
+  
+  .back-button:hover {
+    background-color: aliceblue;
+  }
+  
+
+  .youtube-link {
+    display: flex
+    ;
+        align-items: center;
+        gap: 8px;
+        font-size: 18px;
+        margin-left: 31px;
+        margin-top: -14px;
+  }
+  
+  .youtube-link i {
+    color: #FF0000;
+    font-size: 24px;
+    margin-top: -6px;
+  }
+  .youtube-link p {
+    color: aliceblue;
+  margin-top: 11px;
+  font-size: 15px;
+  }
+
+ 

@@ -1,0 +1,50 @@
+<div class="roadmap-detail-container">
+    <div class="image-section">
+      <img src="assets/img/Frontend roadmap.png" alt="Roadmap Image" />
+    </div>
+  
+    <div class="details-section">
+      <h1 class="title">Roadmap Frontend Developer</h1>
+      <hr />
+      <p class="description">
+        Ce roadmap vous guide à travers toutes les compétences nécessaires pour devenir un développeur frontend moderne : HTML, CSS, JavaScript, frameworks comme React ou Angular, outils de versionning et plus encore.
+      </p>
+      <button class="download-button" (click)="downloadFile()" >📥 Télécharger le PDF</button>
+
+      <div class="cadrer">
+        <div class="success-traits">
+            <div class="trait">
+              <i class="fas fa-tasks"></i>
+              <p>Discipline</p>
+            </div>
+            <div class="trait">
+              <i class="fas fa-lightbulb"></i> <!-- lampe pour Curiosité -->
+              <p>Curiosity</p>
+            </div>
+            <div class="trait">
+                <i class="fas fa-mountain"></i>
+                <p>Perseverance</p>
+            </div>
+              <div class="trait">
+                <i class="fas fa-laptop-code"></i>
+                <p>Practice</p>
+            </div>
+          </div>
+          
+      </div>
+      <div class="youtubecard" (click)="openLink()">
+        <div class="youtube-link" (click)="openLink()">
+            <i class="fab fa-youtube"></i>
+            <p (click)="openLink()" >Watch on YouTube</p>
+          </div>
+          
+      </div>
+      <div class="butback">
+        <button class="back-button" (click)="backRoadmap()">&lt;</button>
+
+      </div>
+    </div>
+  </div>
+
+
+  

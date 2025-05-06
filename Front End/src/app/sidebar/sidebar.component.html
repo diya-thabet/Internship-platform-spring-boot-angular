@@ -1,0 +1,620 @@
+<nav class="sidebar">
+  <header>
+    <div class="image-text">
+      <span class="image"></span>
+    </div>
+  </header>
+
+  <div class="menu-bar">
+    <div class="menu">
+      <ul class="menu-links">
+        <li class="nav-link" (click)="onMenuClick('watermark')">
+          <a>
+            <i class="bi bi-clipboard-check"></i>
+            <span class="text nav-text"> Certificate</span>
+          </a>
+        </li>
+        <li class="nav-link" (click)="onMenuClick('Roadmap')">
+          <a>
+            <i class="bi bi-person-bounding-box"></i>
+
+            <span class="text nav-text"> Roadmap</span>
+          </a>
+        </li>
+
+        <li class="nav-link" (click)="onMenuClick('Consulting')">
+          <a>
+            <i class="bi bi-alexa"></i>
+            <span class="text nav-text"> Consulting</span>
+          </a>
+        </li>
+        <li class="nav-link" (click)="onMenuClick('intership')">
+          <a>
+            <i class="bi bi-journal-bookmark"></i>
+
+            <span class="text nav-text"> PFE & Intership</span>
+          </a>
+        </li>
+
+        <li class="nav-link">
+          <a>
+            <i class="bi bi-bookmarks"></i>
+            <span class="text nav-text"> Events </span>
+          </a>
+        </li>
+        <li class="nav-link">
+          <a>
+            <i class="bi bi-chat-text"></i>
+            <span class="text nav-text"> EniChat</span>
+          </a>
+        </li>
+
+        <li class="nav-link">
+          <a>
+            <i class="bi bi-gear"></i>
+            <span class="text nav-text" (click)="onMenuClick('Settings')" > Settings</span>
+          </a>
+        </li>
+        <li class="nav-link">
+          <a>
+            <i class="bi bi-question-circle"></i>
+            <span class="text nav-text"> Help</span>
+          </a>
+        </li>
+
+        <li class="nav-link">
+          <a>
+            <i class="bi bi-box-arrow-left"></i>
+            <span class="text nav-text"> Logout</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="main-content">
+  <div class="c1" *ngIf="selectedMenu === 'Settings'">
+    <div class="cardd">
+      <div class="titre">
+        <div class="icon-container">
+          <img src="assets/img/icons8-employee-64.png" alt="">
+        </div>
+        <div class="text-container">
+          <h1>List of Mentors</h1>
+          <h2>Manage and Add the Mentor of your choice</h2>
+        </div>
+      </div>
+      <hr class="separator">
+
+      <div class="tabcard">
+        <div class="search-container">
+          <div class="cds">
+            <img src="assets/img/icons8-date-48 (1).png" alt="">
+            <a>06 May 2025</a>
+          </div>
+        </div>
+        <input type="search" name="search" placeholder="Search..." id="">
+
+        <table>
+          <thead>
+            <tr>
+              <th>Identificateur</th>
+              <th>E-mail</th>
+              <th>Name</th>
+              <th>Job</th>
+              <th>Action</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="#">122</a></td>
+              <td>mailexample@gmail.com</td>
+              <td>Marwen Khalil</td>
+              <td><p>Software Engineer</p></td>
+              <td>
+                <div class="tt">
+                  <div class="btnupdate"><img src="assets/img/icons8-pencil-64 (1).png" alt=""></div>
+                  <div class="btndelete"><img src="assets/img/icons8-trash-48.png" alt=""></div>
+                </div>
+              </td>
+            </tr>  
+            <tr>
+              <td><a href="#">123</a></td>
+              <td>345</td>
+              <td>jd2</td>
+              <td><p>doc</p></td>
+              <td>
+                <div class="tt">
+                  <div class="btnupdate"><img src="assets/img/icons8-pencil-64 (1).png" alt=""></div>
+                  <div class="btndelete"><img src="assets/img/icons8-trash-48.png" alt=""></div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="pagination-container">
+          <button class="pagination-btn">Précédent</button>
+          <h6 class="pagination-page">Page 1</h6>
+          <button class="pagination-btn">Suivant</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="c2" *ngIf="selectedMenu === 'intership'">
+   <app-intership></app-intership>
+  </div>
+
+  <div class="c2" *ngIf="selectedMenu === 'watermark'">
+    <div class="cardd4">
+      <img
+        src="assets/img/png-clipart-arabesque-arabesque-white-monochrome-removebg-preview.png"
+        alt="Logo"
+        width="90"
+        height="90"
+      />
+      <h1>Remember, We proudly prepare 1032 Certificate annually.</h1>
+
+      <div class="iml">
+        <img
+          src="assets/img/odhrebandek.png"
+          alt="Decorative"
+          width="90"
+          height="90"
+        />
+      </div>
+
+      <div class="imgjnb">
+        <img
+          src="assets/img/images (6)-Photoroom.png"
+          alt="Decorative"
+          width="90"
+          height="90"
+        />
+      </div>
+
+      <div class="lk1">
+        <img
+          src="assets/img/9414296.png"
+          alt="Greek Salad"
+          width="90"
+          height="90"
+        />
+        <img src="assets/img/17193728.png" alt="Bagel" width="90" height="90" />
+        <img src="assets/img/8654089.png" alt="Naan" width="90" height="90" />
+        <img
+          src="assets/img/10108414.png"
+          alt="Caviar"
+          width="90"
+          height="90"
+        />
+        <img src="assets/img/6104564.png" alt="Drink" width="90" height="90" />
+      </div>
+    </div>
+    <div class="cardssf">
+      <div class="cardss11">
+        <div class="notification-circle">
+          <img
+            src="assets/img/appointment-reminders.png"
+            alt="Notification Icon"
+            class="notif-icon"
+          />
+        </div>
+
+        <div class="lop">
+          <h4>15 New published</h4>
+          <i class="bi bi-three-dots-vertical"></i>
+          <h3>Web Dev</h3>
+        </div>
+      </div>
+      <div class="cardss11">
+        <div class="notification-circle">
+          <img
+            src="assets/img/appointment-reminders.png"
+            alt="Notification Icon"
+            class="notif-icon"
+          />
+        </div>
+
+        <div class="lop">
+          <h4>23 New published</h4>
+          <i class="bi bi-three-dots-vertical"></i>
+          <h3>Cloud Computing</h3>
+        </div>
+      </div>
+
+      <div class="cardss11">
+        <div class="notification-circle">
+          <img
+            src="assets/img/appointment-reminders.png"
+            alt="Notification Icon"
+            class="notif-icon"
+          />
+        </div>
+
+        <div class="lop">
+          <h4>7 New published</h4>
+          <i class="bi bi-three-dots-vertical"></i>
+          <h3>Data Engineering</h3>
+        </div>
+      </div>
+    </div>
+    <div class="cardd3">
+      <div class="titre22">
+        <div class="icon-container2">
+          <img
+            src="assets/img/5930234.png"
+            alt="Kitchen"
+            width="90"
+            height="90"
+          />
+        </div>
+        <div class="text-container2">
+          <h1>All Courses Watching</h1>
+          <h2>Watch these courses and have fun</h2>
+        </div>
+      </div>
+        <div class="Partieonecard">
+          <div class="cards-container">
+            <div class="course-card" *ngFor="let course of courses">
+              <div class="course-img">
+                <img [src]="course.image" alt="Course Image" />
+              </div>
+              <span class="tag" [ngClass]="course.tag.toLowerCase()">{{ course.tag }}</span>
+              <h3>{{ course.title }}</h3>
+              <div class="progress-bar">
+                <div class="progress" [style.width.%]="course.progress"></div>
+              </div>
+              <div class="card-footer">
+                <div class="avatars">
+                  <img *ngFor="let avatar of course.avatars" [src]="avatar" alt="" />
+                  <span class="more">{{ course.more }}</span>
+                </div>
+                <button class="reload-btn" (click)="openYoutube(course.link)">Watch Now!</button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <!-- Partie 2 card -->
+        <div class="dakhletcard5">
+          <div class="course-card" *ngFor="let course of courses2">
+            <div class="course-img">
+              <img [src]="course.img" alt="Course Image" />
+            </div>
+            <span class="tag" [ngClass]="course.category">{{ course.tag }}</span>
+            <h3>{{ course.title }}</h3>
+            <div class="progress-bar">
+              <div class="progress" [style.width.%]="course.progress"></div>
+            </div>
+            <div class="card-footer">
+              <div class="avatars">
+                <img *ngFor="let avatar of course.avatars" [src]="avatar" alt="" />
+                <span class="more">{{ course.more }}</span>
+              </div>
+              <button class="reload-btn" (click)="openYoutube2(course.link)">
+                Watch Now!
+              </button>
+            </div>
+          </div>
+        </div>
+        
+      <div class="pagination-cc">
+        <button class="pagination-bjk"><< Previous</button>
+        <button class="pagination-bjs">Next >></button>
+      </div>
+
+      <div class="titre22">
+        <div class="icon-container2">
+          <img
+            src="assets/img/3212793.png"
+            alt="Kitchen"
+            width="90"
+            height="90"
+          />
+        </div>
+        <div class="text-container2">
+          <h1>The Recommended Certificate</h1>
+          <h2>
+            Efficiently start training and learn these Certificate to Advance
+          </h2>
+          <hr />
+        </div>
+      </div>
+      <div class="csd">
+        <div class="categories-section">
+          <ul class="category-list">
+            <li class="category-item" [class.active]="selectedResourceCategory === 'All'" (click)="changeResourceCategory('All')">All</li>
+            <li class="category-item" [class.active]="selectedResourceCategory === 'Programming'" (click)="changeResourceCategory('Programming')">Programming</li>
+            <li class="category-item" [class.active]="selectedResourceCategory === 'Networking'" (click)="changeResourceCategory('Networking')">Networking</li>
+            <li class="category-item" [class.active]="selectedResourceCategory === 'AI'" (click)="changeResourceCategory('AI')">AI</li>
+            <li class="category-item" [class.active]="selectedResourceCategory === 'Data'" (click)="changeResourceCategory('Data')">Data</li>
+            <li class="category-item" [class.active]="selectedResourceCategory === 'Cybersecurity'" (click)="changeResourceCategory('Cybersecurity')">Cybersecurity</li>
+            <li class="category-item" [class.active]="selectedResourceCategory === 'English'" (click)="changeResourceCategory('English')">English</li>
+          </ul>
+        </div>
+      
+        <div class="lms">
+          <h2>Toutes les Ressources</h2>
+        </div>
+      
+        <div class="resources-section">
+          <div class="resource-card" *ngFor="let resource of paginatedResources">
+            <img [src]="resource.img" [alt]="resource.title" width="90" height="90" />
+            <h3 class="resource-title">{{ resource.title }}</h3>
+            <div class="resource-category">{{ resource.category }}</div>
+            <p class="resource-description">{{ resource.description }}</p>
+            <a [href]="resource.link" class="read-more" target="_blank">En savoir plus</a>
+          </div>
+        </div>
+      
+        <div class="butf">
+          <div class="t1">
+            <button (click)="goToPreviousResourcePage()"><</button>
+          </div>
+          <div class="t2">
+            <button (click)="goToNextResourcePage()">></button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class="cardsbejaneb">
+      <h4>Your Profile</h4>
+
+      <div class="profile-container">
+        <img
+          src="assets/img/FINAL-Blog-Images.webp"
+          alt="Profile"
+          class="profile-pic"
+        />
+
+        <div class="profile-header">
+          <div class="profile-info">
+            <div class="icoenv">
+              <div class="profile-icons">
+                <button><i class="bi bi-envelope"></i></button>
+                <button><i class="bi bi-github"></i></button>
+                <button><i class="bi bi-person-circle"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mentor-section">
+          <h4>Your Mentor</h4>
+          <div class="mentgrp">
+            <div class="mentor">
+              <div>
+                <strong>Kiilam Rosvelt</strong>
+                <p>AWS Cloud Engineer</p>
+              </div>
+              <button>Follow</button>
+            </div>
+            <div class="mentor">
+              <div>
+                <strong>Teodor Maskevich</strong>
+                <p>Cybersecurity Expert</p>
+              </div>
+              <button>Follow</button>
+            </div>
+            <div class="mentor">
+              <div>
+                <strong>Andrew Kooller</strong>
+                <p>Full Stack Developer</p>
+              </div>
+              <button>Follow</button>
+            </div>
+            <div class="mentor">
+              <div>
+                <strong>Adam Chekish</strong>
+                <p>Backend Developer</p>
+              </div>
+              <button>Follow</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="c2" *ngIf="selectedMenu === 'Consulting'">
+    <div class="cdg">
+      <div class="jkp"></div>
+      <div class="cdgl" (click)="ThisClique('Article')">
+        <img src="assets/img/icons8-article-50.png" alt="" srcset="" />
+        <h6>Article</h6>
+      </div>
+
+      <div class="cdgl" (click)="ThisClique('Podcast')">
+        <img
+          src="assets/img/icons8-podcast-48.png"
+          alt=""
+          srcset=""
+          onclick="ThisClique('ac2')"
+        />
+        <h6>Podcast</h6>
+      </div>
+      <div class="cdgl" (click)="ThisClique('video')">
+        <img src="assets/img/icons8-video-50.png" alt="" srcset="" />
+        <h6>Video</h6>
+      </div>
+    </div>
+    <div class="rt" *ngIf="selectedcliq === 'Article'">
+      <div class="loi">
+        <div class="loiii">
+          <img src="assets/img/2232688.png" alt="" srcset="" />
+        </div>
+        <div class="loii">
+          <img src="assets/img/3429149.png" alt="" srcset="" />
+        </div>
+      </div>
+      <div class="titley">
+        <img src="assets/img/17861162.png" alt="" srcset="" />
+        <h4>The best selections from the article :</h4>
+      </div>
+      <div class="pargr">
+        <p class="animated-text">
+          <span>Discover</span> <span> the </span> <span> most </span>
+          <span> relevant, </span> <span> insightful, </span>
+          <span> and </span> <span> impactful </span> <span> excerpts </span>
+          <span> from </span> <span> the </span> <span> article. </span>
+        </p>
+        <p class="animated-text"></p>
+        <p class="animated-text">
+          <span>These</span> <span>key</span> <span>selections</span>
+          <span>help</span> <span>you</span> <span>grasp</span>
+          <span>the</span> <span>main</span> <span>ideas</span>
+          <span>quickly</span> <span>and</span> <span>focus</span>
+          <span>on</span> <span>what</span> <span>matters</span>
+          <span>most.</span>
+        </p>
+
+        <p class="animated-text">
+          <span>Use</span> <span>them</span> <span>to</span>
+          <span>reinforce</span> <span>your</span> <span>understanding,</span>
+          <span>prepare</span> <span>for</span> <span>discussions,</span>
+          <span>or</span> <span>review</span> <span>essential</span>
+          <span>points</span> <span>with</span> <span>ease.</span>
+        </p>
+
+        <p class="animated-text">
+          <span>Ideal</span> <span>for</span> <span>students</span>
+          <span>looking</span> <span>to</span> <span>save</span>
+          <span>time</span> <span>while</span> <span>getting</span>
+          <span>straight</span> <span>to</span> <span>the</span>
+          <span>core</span> <span>of</span> <span>the</span>
+          <span>content.</span>
+        </p>
+      </div>
+      <div class="courses-container">
+        <div class="course" *ngFor="let article of articles">
+          <div class="course-preview">
+            <h6>{{ article.category }}</h6>
+            <h2>{{ article.title }}</h2>
+           
+          </div>
+          <div class="course-info">
+            <div class="progress-container">
+              <div class="progress"></div>
+            </div>
+            <h2>{{ article.currentLesson }}</h2>
+            <button class="btn" (click)="openInNewTab(article.link)">
+              {{ article.buttonText }}
+            </button>
+            </div>
+        </div>
+      </div>
+      <div class="gjlk">
+        <div class="pentagon-arrow-left">
+          <span>Code Reviews & Patterns</span>
+        </div>
+        <div class="pentagon-arrow-right">
+          <span>Best Practices</span>
+        </div>
+        <div class="pentagon-arrow-left">
+          <span>Code Reviews & Patterns</span>
+        </div>
+        <div class="pentagon-arrow-right">
+          <span>Performance Optimization</span>
+        </div>
+      </div>
+    </div>
+    <div class="rt2" *ngIf="selectedcliq === 'video'">
+      <div class="cardvideo" *ngFor="let video of paginatedVideos()">
+        <div class="cds" *ngIf="video.date">
+          <img src="assets/img/icons8-date-48 (1).png" alt="" />
+          <a>{{ video.date }}</a>
+        </div>
+      
+        <div class="cardvidimg">
+          <img [src]="video.icon" alt="Video Icon" />
+        </div>
+      
+        <div class="blocName">
+          <h4>{{ video.title }}</h4>
+          <hr />
+        </div>
+      
+        <div class="blocdes">
+          <p [innerHTML]="video.description"></p>
+        </div>
+      
+        <div class="blocbutt" (click)="openVideo(video.urlvideo)">
+          <h6>Upgrade Video</h6>
+        </div>
+        
+      </div>
+      <div class="video-navigation">
+        <button (click)="prevPage()" [disabled]="currentPage === 0">&lt;</button>
+        <button (click)="nextPage()" [disabled]="(currentPage + 1) * videosPerPage >= videos.length">&gt;</button>
+      </div>
+    </div>
+
+    <div class="pod" *ngIf="selectedcliq === 'Podcast'">
+      <div class="carddr">
+        <div class="background-overlay"></div>
+
+        <input
+          type="text"
+          name=""
+          id=""
+          placeholder=" 🔍 Search your favourite Podcast..."
+        />
+        <img
+          src="assets/img/podcast-background-1920-x-1080-gg9kbtvo5htz5xhu-Photoroom.png"
+          alt=""
+        />
+        <div class="titpod">
+          <h2>Gain knowledge from the Podcast</h2>
+        </div><div class="podcast-container">
+          <div
+          class="podcast-card"
+          *ngFor="let podcast of podcasts"
+          [ngStyle]="{
+            'background-image': 'url(' + podcast.imageSrc + ')'
+          }"
+        >
+          <div class="glass">
+            <img [src]="podcast.imageSrc" alt="Podcast image" />
+            <h2>{{ podcast.title }}</h2>
+            <p>{{ podcast.description }}</p>
+            <button (click)="openSpotify(podcast.spotifyLink)" ><i class="bi {{ podcast.buttonIcon }}"></i> {{ podcast.buttonText }}</button>
+          </div>
+        </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+  <div class="Roadmapcard" *ngIf="selectedMenu === 'Roadmap'">
+    <div *ngIf="!showRoadmapDetail">
+    <div class="roadmap-section">
+      <div class="roadmap-header">
+        <img src="assets/img/istockphoto-691423398-612x612-Photoroom.png" alt="Roadmap" class="roadmap-banner" />
+        <h1>Explore Your Tech Roadmap</h1>
+        <p>Choisissez un domaine et découvrez un parcours clair pour devenir expert.</p>
+      </div>
+    
+      <div class="roadmap-filters">
+        <input type="text" placeholder="🔍 Rechercher un domaine..." />
+        <input type="date" />
+      </div>
+    
+      <div class="roadmap-cards">
+        <div class="roadmap-card" *ngFor="let domain of domains">
+          <img [src]="domain.img" alt="{{domain.title}}" />
+          <h2>{{ domain.title }}</h2>
+          <p>{{ domain.description }}</p>
+          <button  (click)="GotoRoadmapDetail()" >Show</button>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div *ngIf="showRoadmapDetail">
+      <app-roadmapdetail></app-roadmapdetail>
+    </div>
+  </div>
+</section>
