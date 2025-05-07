@@ -15,8 +15,10 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 public class ArticleController {
 
+    //autowired injection
     @Autowired
     private ArticleService articleService;
+
 
     @GetMapping
     public List<ArticleDTO> getAllArticles() {

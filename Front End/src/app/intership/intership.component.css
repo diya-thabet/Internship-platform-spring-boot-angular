@@ -1,7 +1,9 @@
 /* sidebar.component.css */
 /* Google Font Import - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+/*@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel=stylesheet');*/
 
 
 * {
@@ -3429,7 +3431,7 @@ margin-left: -50px;
     }
 
     .background-overlay {
-      background-image: url(/assets/img/podcast-show-seamless-pattern-background-260nw-1695747016-Photoroom.png);
+      background-image: url('/assets/img/podcast-show-seamless-pattern-background-260nw-1695747016-Photoroom.png');
     background-position: center;
     opacity: 0.1;
     position: absolute;
